@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" role="img" aria-label="ScaleZen Foundation Favicon">
+  <!-- High-contrast rounded badge visible on both light and dark browser tabs -->
+  <rect x="2" y="2" width="96" height="96" rx="22" fill="#ffffff" stroke="#154e56" stroke-width="3" />
+  <g transform="translate(8, 8) scale(0.84)">
+    <!-- Bolded split ring arcs for 16x16px Chrome tab legibility -->
+    <path d="M31.5 9.1 A45 45 0 0 1 81.2 82.4" stroke="#154e56" stroke-width="6.8" stroke-linecap="butt" />
+    <path d="M73.8 88.2 A45 45 0 0 1 23.5 13.6" stroke="#173052" stroke-width="6.8" stroke-linecap="butt" />
+    <!-- Fused S (Trust Navy) -->
+    <path d="M29 21 H53.5 L50 34.5 H33.5 C28.5 34.5 26 36 25.5 39 C25 42 27.5 43.7 33.5 45.3 C43.5 47.9 49.5 52.5 49.5 61 C49.5 71 43.5 79 33.5 79 H17.5 A43 43 0 0 1 13.5 66 H31.5 C36 66 38 64.2 38 61 C38 57.8 35.8 56 30 54.4 C19 51.4 13.5 46.5 14 37.5 C14.5 27.8 20 21 29 21 Z" fill="#173052" />
+    <!-- Fused Z (Deep Teal) -->
+    <path d="M53.5 21 H86.5 L66 66 H85.5 A43 43 0 0 1 81.5 79 H48 L70 34.5 H50 L53.5 21 Z" fill="#154e56" />
+    <!-- Prominent Warm Gold Knowledge Spark -->
+    <path d="M87 2 L90 10 L98 13 L90 16 L87 24 L84 16 L76 13 L84 10 Z" fill="#e8b44f" />
+  </g>
+</svg>

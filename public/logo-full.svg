@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 120" fill="none" role="img" aria-label="ScaleZen Foundation — Education Without Financial Barriers">
+  <rect width="580" height="120" fill="#ffffff" />
+  <g transform="translate(14, 10) scale(1)">
+    <path d="M31.5 9.1 A45 45 0 0 1 81.2 82.4" stroke="#154e56" stroke-width="5.2" stroke-linecap="butt" />
+    <path d="M73.8 88.2 A45 45 0 0 1 23.5 13.6" stroke="#173052" stroke-width="5.2" stroke-linecap="butt" />
+    <path d="M29 22 H53 L50 34 H33.5 C28.5 34 26 35.5 25.5 38.5 C25 41.5 27.5 43.2 33.5 44.8 C43.5 47.4 49 52 49 60.5 C49 70.5 43.5 78 33.5 78 H17.5 A43 43 0 0 1 13.5 66 H31.5 C36 66 38 64.2 38 61 C38 57.8 35.8 56 30 54.4 C19 51.4 13.5 46.5 14 37.5 C14.5 27.8 20 22 29 22 Z" fill="#173052" />
+    <path d="M53 22 H86 L66 66 H85.5 A43 43 0 0 1 81.5 78 H48.5 L70 34 H50 L53 22 Z" fill="#154e56" />
+    <path d="M88 3 L90.2 9.8 L97 12 L90.2 14.2 L88 21 L85.8 14.2 L79 12 L85.8 9.8 Z" fill="#e8b44f" />
+  </g>
+  <text x="132" y="60" font-family="Inter, system-ui, sans-serif" font-size="35" font-weight="800" letter-spacing="-0.6">
+    <tspan fill="#173052">ScaleZen </tspan>
+    <tspan fill="#154e56">Foundation</tspan>
+  </text>
+  <rect x="133" y="74" width="36" height="3" rx="1.5" fill="#e8b44f" />
+  <text x="178" y="80" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="700" letter-spacing="1.4" fill="#154e56">
+    EDUCATION WITHOUT FINANCIAL BARRIERS
+  </text>
+</svg>

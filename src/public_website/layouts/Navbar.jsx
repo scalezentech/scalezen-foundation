@@ -294,7 +294,7 @@ const Navbar = () => {
               to="/partner"
               aria-label="Partner with us"
               title="Partner with us"
-              className={`flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 bg-white text-navy transition-colors hover:border-teal hover:text-teal ${ring}`}
+              className={`flex h-12 w-12 items-center justify-center rounded-full border border-dark-teal/80 bg-white text-dark-teal/80 transition-colors hover:border-navy hover:text-navy ${ring}`}
             >
               <HeartHandshake size={20} aria-hidden="true" />
             </Link>

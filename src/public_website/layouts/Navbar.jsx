@@ -253,12 +253,6 @@ const Navbar = () => {
             : "border-slate-200/70"
         }`}
       >
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-6 focus:top-3 focus:z-[60] focus:rounded-full focus:bg-teal focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
-        >
-          Skip to main content
-        </a>
 
         <div className="mx-auto flex h-20 max-w-[1320px] items-center justify-between gap-4 px-5 sm:px-8 xl:grid xl:grid-cols-[1fr_auto_1fr]">
           {/* Logo (public/logo-full.svg, 300x62). mix-blend-multiply hides its white

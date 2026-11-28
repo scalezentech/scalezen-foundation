@@ -3,72 +3,54 @@ import { Link } from "react-router-dom";
 import {
   ArrowRight,
   BookOpen,
+  CheckCircle2,
+  ClipboardCheck,
+  FileText,
   GraduationCap,
-  Laptop,
   Lightbulb,
-  Users,
-  School,
+  ShieldCheck,
 } from "lucide-react";
 
-const programs = [
+/* Application process steps */
+const steps = [
   {
-    number: "01",
-    title: "School Scholarship Exam Preparation",
+    title: "Explore Programs",
     description:
-      "Support for students preparing for school-level scholarship examinations through structured learning and exam guidance.",
-    image:
-      "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=80",
-    icon: GraduationCap,
-    tag: "Exam Preparation",
-    classes: "Class 5 & Class 8",
-    classNote: "Indicative scholarship exam levels",
-  },
-  {
-    number: "02",
-    title: "Navodaya Entrance Preparation",
-    description:
-      "Learning support to help students prepare for Jawahar Navodaya Vidyalaya entrance examinations.",
-    image:
-      "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=900&q=80",
+      "Discover educational initiatives and choose the learning support that best matches your educational needs.",
+    detail: "Find the right opportunity",
     icon: BookOpen,
-    tag: "Entrance Preparation",
-    classes: "Class 5 Students",
-    classNote: "Preparing for Class 6 admission",
   },
   {
-    number: "03",
-    title: "Digital Learning & Assessment",
+    title: "Submit Application",
     description:
-      "Proposed access to practice questions, mock tests, recorded lessons, study notes and progress tracking.",
-    image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80",
-    icon: Laptop,
-    tag: "Digital Education",
-    classes: "To Be Announced",
-    classNote: "Depends on the approved program",
+      "Complete the application form with the required student and guardian information.",
+    detail: "Share your details",
+    icon: FileText,
   },
   {
-    number: "04",
-    title: "Scholarships & Mentorship",
+    title: "Application Review",
     description:
-      "Potential initiatives focused on mentoring, career guidance, examination awareness and digital literacy.",
-    image:
-      "https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=900&q=80",
-    icon: Users,
-    tag: "Guidance & Support",
-    classes: "Based on Initiative",
-    classNote: "Eligibility varies by initiative",
+      "The Foundation reviews applications according to approved eligibility criteria and available program capacity.",
+    detail: "Eligibility verification",
+    icon: ClipboardCheck,
+  },
+  {
+    title: "Receive Support",
+    description:
+      "Approved students receive access to the relevant free educational resources and learning support.",
+    detail: "Start your learning journey",
+    icon: GraduationCap,
   },
 ];
 
-/* Scroll reveal animation */
+/* Reveals a block once, the first time it scrolls into view. */
 const useReveal = () => {
   const ref = useRef(null);
   const [shown, setShown] = useState(false);
 
   useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
+    const element = ref.current;
+    if (!element) return;
 
     if (
       !("IntersectionObserver" in window) ||
@@ -88,8 +70,7 @@ const useReveal = () => {
       { threshold: 0.12 }
     );
 
-    observer.observe(el);
-
+    observer.observe(element);
     return () => observer.disconnect();
   }, []);
 
@@ -101,172 +82,149 @@ const revealClass = (shown) =>
     shown ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
   }`;
 
-const ProgramsSection = () => {
+const HowItWorksSection = () => {
   const [headingRef, headingShown] = useReveal();
-  const [gridRef, gridShown] = useReveal();
+  const [stepsRef, stepsShown] = useReveal();
+  const [panelRef, panelShown] = useReveal();
   const [ctaRef, ctaShown] = useReveal();
 
   return (
     <section
-      id="programs"
-      aria-labelledby="programs-heading"
+      id="how-it-works"
+      aria-labelledby="how-it-works-heading"
       className="bg-off-white py-16 sm:py-20 lg:py-24"
     >
       <div className="mx-auto max-w-[1320px] px-6 sm:px-8">
-
         {/* Section heading */}
         <div
           ref={headingRef}
-          className={`mx-auto mb-12 max-w-3xl text-center ${revealClass(
-            headingShown
-          )}`}
+          className={`mx-auto mb-14 max-w-3xl text-center ${revealClass(headingShown)}`}
         >
-          <span className="mb-5 inline-flex items-center border border-teal/30 gap-2 rounded-full bg-teal/[0.07] px-4 py-2 text-sm font-semibold text-teal">
-            <Lightbulb size={16} aria-hidden="true" className="text-gold" />
-            Learning Opportunities
+          <span className="mb-5 inline-flex items-center gap-2 rounded-full bg-teal/[0.07] px-4 py-2 text-sm font-semibold text-teal">
+            <Lightbulb size={16} aria-hidden="true" />
+            How It Works
           </span>
 
           <h2
-            id="programs-heading"
+            id="how-it-works-heading"
             className="text-3xl font-bold leading-[1.1] tracking-tight text-navy sm:text-4xl lg:text-[44px]"
           >
-            Creating Pathways to
-            <span className="block text-teal">
-              Better Opportunities
-            </span>
+            Your Journey Towards
+            <span className="block text-teal">Better Opportunities</span>
           </h2>
 
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
-            Every student deserves the opportunity to learn, grow and achieve.
-            Our proposed programs focus on making quality educational support
-            more accessible.
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
+            Accessing educational support should be simple and transparent.
+            Follow these four steps to understand how students can apply for
+            learning opportunities through ScaleZen Foundation.
           </p>
         </div>
 
-        {/* Program cards */}
-        <div
-          ref={gridRef}
-          className="grid items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-4"
+        {/* Process steps */}
+        <ol
+          ref={stepsRef}
+          className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
         >
-          {programs.map((program, i) => {
-            const Icon = program.icon;
+          {steps.map((step, index) => {
+            const Icon = step.icon;
+            const isLast = index === steps.length - 1;
 
             return (
-              <article
-                key={program.number}
-                style={{
-                  transitionDelay: gridShown ? `${i * 90}ms` : "0ms",
-                }}
-                className={`group relative flex h-full flex-col overflow-hidden rounded-[24px] border border-slate-200/80 bg-white transition-all duration-500 hover:-translate-y-1.5 hover:border-teal/25 hover:shadow-xl hover:shadow-teal/10 motion-reduce:transition-none ${
-                  gridShown
-                    ? "translate-y-0 opacity-100"
-                    : "translate-y-6 opacity-0"
+              <li
+                key={step.title}
+                style={{ transitionDelay: stepsShown ? `${index * 100}ms` : "0ms" }}
+                className={`group relative flex flex-col rounded-[28px] border border-slate-200/80 bg-white p-6 transition-all duration-500 hover:border-teal/30 hover:shadow-lg hover:shadow-teal/10 motion-reduce:transition-none sm:p-7 ${
+                  stepsShown ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
                 }`}
               >
-                {/* Image */}
-                <div className="relative h-40 shrink-0 overflow-hidden bg-light-teal sm:h-44">
-                  <img
-                    src={program.image}
-                    alt=""
-                    width="900"
-                    height="600"
-                    loading="lazy"
-                    decoding="async"
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110 motion-reduce:transition-none"
-                  />
-
-                  <div className="absolute inset-0 bg-gradient-to-t from-dark-teal/85 via-dark-teal/15 to-transparent" />
-
-                  <span className="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1.5 text-[11px] font-semibold text-navy">
-                    {program.tag}
-                  </span>
-
+                {/* Dashed line that leads on to the next step (4-column layout only) */}
+                {!isLast && (
                   <span
                     aria-hidden="true"
-                    className="absolute bottom-3 left-4 text-3xl font-bold text-white/80"
-                  >
-                    {program.number}
-                  </span>
+                    className="absolute -right-6 left-[6.25rem] top-[3.5rem] hidden border-t-2 border-dashed border-teal/25 lg:block"
+                  />
+                )}
 
-                  <div className="absolute bottom-3 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-gold text-navy shadow-md">
-                    <Icon size={20} aria-hidden="true" />
-                  </div>
-                </div>
+                <span className="flex h-14 w-14 items-center justify-center rounded-full bg-teal text-white transition-colors duration-300 group-hover:bg-gold group-hover:text-navy">
+                  <Icon size={26} strokeWidth={1.8} aria-hidden="true" />
+                </span>
 
-                {/* Card content */}
-                <div className="flex flex-1 flex-col p-5">
+                <p className="mt-6 text-sm font-semibold text-teal">
+                  Step {index + 1}
+                </p>
 
-                  {/* Consistent title height */}
-                  <h3 className="min-h-[56px] text-lg font-bold leading-snug text-navy transition-colors duration-300 group-hover:text-teal">
-                    {program.title}
-                  </h3>
+                <h3 className="mt-1 text-xl font-bold leading-snug text-navy">
+                  {step.title}
+                </h3>
 
-                  {/* Consistent description height */}
-                  <p className="mt-2 min-h-[120px] text-sm leading-6 text-slate-600">
-                    {program.description}
-                  </p>
+                <p className="mt-3 flex-1 text-[15px] leading-7 text-slate-600">
+                  {step.description}
+                </p>
 
-                  {/* Aligned class information panel */}
-                  <div className="mt-4 flex min-h-[116px] flex-col rounded-xl border border-teal/10 bg-mint px-3.5 py-3">
-                    <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-teal">
-                      <School size={14} aria-hidden="true" />
-                      Suitable For
-                    </div>
-
-                    <p className="mt-1.5 text-sm font-bold text-navy">
-                      {program.classes}
-                    </p>
-
-                    <p className="mt-1 text-xs leading-5 text-slate-500">
-                      {program.classNote}
-                    </p>
-                  </div>
-
-                  {/* Aligned program link */}
-                  <Link
-                    to="/programs"
-                    aria-label={`Explore ${program.title}`}
-                    className="mt-auto inline-flex w-fit items-center gap-2 pt-5 text-sm font-bold text-teal transition-all duration-300 after:absolute after:inset-0 after:content-[''] group-hover:gap-3 hover:text-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal focus-visible:ring-offset-2"
-                  >
-                    Explore Program
-                    <ArrowRight size={16} aria-hidden="true" />
-                  </Link>
-                </div>
-              </article>
+                <p className="mt-6 border-t border-slate-100 pt-4 text-sm font-medium text-slate-500">
+                  {step.detail}
+                </p>
+              </li>
             );
           })}
+        </ol>
+
+        {/* Transparency panel */}
+        <div
+          ref={panelRef}
+          className={`mt-10 flex flex-col gap-5 rounded-[28px] border border-slate-200/80 bg-white p-6 sm:flex-row sm:items-start sm:gap-6 sm:p-8 ${revealClass(panelShown)}`}
+        >
+          <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gold text-navy">
+            <ShieldCheck size={24} aria-hidden="true" />
+          </span>
+
+          <div>
+            <h3 className="text-lg font-bold text-navy">
+              A Fair and Transparent Application Process
+            </h3>
+
+            <p className="mt-2 max-w-4xl text-[15px] leading-7 text-slate-600">
+              Every application is reviewed according to the approved
+              eligibility criteria and available capacity of the relevant
+              program. Additional supporting information may be requested
+              privately when necessary. Submitting an application does not
+              guarantee selection.
+            </p>
+
+            <p className="mt-4 flex items-center gap-2 text-sm font-semibold text-teal">
+              <CheckCircle2 size={17} aria-hidden="true" />
+              Responsible verification and student privacy
+            </p>
+          </div>
         </div>
 
         {/* Bottom CTA */}
         <div
           ref={ctaRef}
-          className={`mt-12 rounded-[28px] bg-navy px-7 py-9 sm:px-12 lg:mt-14 lg:px-16 lg:py-10 ${revealClass(
-            ctaShown
-          )}`}
+          className={`mt-14 rounded-[28px] bg-navy px-7 py-10 sm:px-12 lg:mt-16 lg:px-16 lg:py-12 ${revealClass(ctaShown)}`}
         >
-          <div className="flex flex-col items-center justify-between gap-7 text-center md:flex-row md:text-left">
+          <div className="flex flex-col items-center justify-between gap-8 text-center md:flex-row md:text-left">
             <div className="max-w-2xl">
               <div className="mb-3 flex items-center justify-center gap-2 text-sm font-semibold text-gold md:justify-start">
                 <GraduationCap size={19} aria-hidden="true" />
-                Your Learning Journey Starts Here
+                Take the First Step
               </div>
 
               <h3 className="text-2xl font-bold leading-snug text-white sm:text-3xl">
-                Education should never be limited by financial barriers.
+                Every great learning journey starts with an opportunity.
               </h3>
 
-              <p className="mt-3 text-sm leading-7 text-white/75 sm:text-[15px]">
-                Discover the educational support and learning opportunities
-                being developed by ScaleZen Foundation.
+              <p className="mt-4 text-[15px] leading-7 text-white/75">
+                Explore the educational initiatives being developed by
+                ScaleZen Foundation.
               </p>
             </div>
 
             <Link
               to="/programs"
-              className="group inline-flex shrink-0 items-center gap-3 rounded-full bg-gold py-3 pl-6 pr-3 text-sm font-bold text-navy transition-all duration-300 hover:-translate-y-0.5 hover:bg-white active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-navy"
+              className="group inline-flex shrink-0 items-center gap-3 rounded-full bg-gold py-3.5 pl-7 pr-3.5 text-[15px] font-bold text-navy transition-all duration-300 hover:-translate-y-0.5 hover:bg-white active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-navy"
             >
-              View All Programs
-
+              Explore Programs
               <span className="flex h-7 w-7 items-center justify-center rounded-full bg-navy/10 transition-transform duration-300 group-hover:translate-x-0.5">
                 <ArrowRight size={16} aria-hidden="true" />
               </span>
@@ -274,15 +232,13 @@ const ProgramsSection = () => {
           </div>
         </div>
 
-        {/* Approval note */}
-        <p className="mx-auto mt-5 max-w-3xl text-center text-xs leading-5 text-slate-500">
-          Class levels shown are indicative. Final program details, eligibility
-          criteria and application availability will be published after formal
-          approval by the Foundation.
+        {/* Supporting note */}
+        <p className="mx-auto mt-6 max-w-3xl text-center text-sm leading-6 text-slate-500">
+          Clear steps. Responsible verification. Meaningful learning support.
         </p>
       </div>
     </section>
   );
 };
 
-export default ProgramsSection;
+export default HowItWorksSection;

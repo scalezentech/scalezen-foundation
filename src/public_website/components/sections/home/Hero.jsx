@@ -215,7 +215,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="bg-off-white px-3 pb-3 pt-4 sm:px-5 sm:pb-5 sm:pt-5
+      className="bg-off-white px-3 pb-3 pt-4 sm:px-5 sm:pb-5 sm:pt-5 navbar-hide
                  min-h-[calc(100svh-5rem)]
                  lg:h-[calc(100svh-7.5rem)] lg:min-h-[460px]"
     >

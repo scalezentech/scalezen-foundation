@@ -153,7 +153,7 @@ const Navbar = () => {
       frame = 0;
       const y = window.scrollY;
       const delta = y - lastY.current;
-      const hero = document.getElementById("home");
+      const hero = document.querySelector(".navbar-hide");
       const pastHero = hero ? hero.getBoundingClientRect().bottom <= 80 : false;
 
       setScrolled(y > 4);

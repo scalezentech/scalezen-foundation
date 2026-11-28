@@ -26,7 +26,7 @@ const panels = [
     icon: BookOpen,
     title: "Free learning resources",
     text: "Study material and tools at no cost to the student.",
-    fallback: "from-[#154E56] to-[#2A8C96]",
+    fallback: "from-teal to-dark-teal",
   },
   {
     src: "https://images.unsplash.com/photo-1522661067900-ab829854a57f?auto=format&fit=crop&w=900&q=75",
@@ -34,7 +34,7 @@ const panels = [
     icon: Target,
     title: "Competitive exam preparation",
     text: "Structured preparation for the exams that open doors.",
-    fallback: "from-[#173052] to-[#2B4C7E]",
+    fallback: "from-navy to-dark-teal",
   },
   {
     src: "https://images.unsplash.com/photo-1758270704925-fa59d93119c1?auto=format&fit=crop&w=900&q=75",
@@ -42,7 +42,7 @@ const panels = [
     icon: Compass,
     title: "Educational guidance",
     text: "Help choosing courses and planning the next step.",
-    fallback: "from-[#0E3B42] to-[#1D6870]",
+    fallback: "from-dark-teal to-teal",
   },
 ];
 
@@ -53,7 +53,7 @@ const assurances = [
 ];
 
 const ring =
-  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#154E56] focus-visible:ring-offset-2";
+  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal focus-visible:ring-offset-2";
 
 /*
   Expanding panel: the active one grows and shows its description.
@@ -122,7 +122,7 @@ const Panel = ({ panel, isActive, onActivate, priority }) => {
       <span
         className={`absolute left-5 top-5 hidden h-10 w-10 items-center justify-center rounded-full transition-colors duration-300 lg:flex ${
           isActive
-            ? "bg-[#E8B44F] text-[#173052]"
+            ? "bg-gold text-navy"
             : "bg-white/20 text-white backdrop-blur-sm group-hover:bg-white/30"
         }`}
       >
@@ -147,8 +147,8 @@ const Panel = ({ panel, isActive, onActivate, priority }) => {
         <span
           className={`mb-3 flex h-10 w-10 items-center justify-center rounded-full transition-colors duration-300 lg:hidden ${
             isActive
-              ? "bg-[#E8B44F] text-[#173052]"
-              : "bg-[#154E56]/10 text-[#154E56]"
+              ? "bg-gold text-navy"
+              : "bg-teal/10 text-teal"
           }`}
         >
           <Icon size={19} aria-hidden="true" />
@@ -159,7 +159,7 @@ const Panel = ({ panel, isActive, onActivate, priority }) => {
             isActive ? "lg:opacity-100 lg:delay-200" : "lg:opacity-0"
           }`}
         >
-          <p className="text-base font-semibold leading-snug text-[#173052] sm:text-lg">
+          <p className="text-base font-semibold leading-snug text-navy sm:text-lg">
             {panel.title}
           </p>
 
@@ -215,7 +215,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="bg-[#F7FAFA] px-3 pb-3 pt-4 sm:px-5 sm:pb-5 sm:pt-5
+      className="bg-off-white px-3 pb-3 pt-4 sm:px-5 sm:pb-5 sm:pt-5
                  min-h-[calc(100svh-5rem)]
                  lg:h-[calc(100svh-7.5rem)] lg:min-h-[460px]"
     >
@@ -225,7 +225,7 @@ const Hero = () => {
           <div className="my-auto">
             <h1
               style={{ transitionDelay: "60ms" }}
-              className={`max-w-[13ch] text-[clamp(2.6rem,10vw,3.75rem)] font-bold leading-[1.04] tracking-[-0.03em] text-[#173052] lg:max-w-none lg:text-[clamp(2.5rem,min(4.2vw,8.5vh),4.5rem)] ${reveal}`}
+              className={`max-w-[13ch] text-[clamp(2.6rem,10vw,3.75rem)] font-bold leading-[1.04] tracking-[-0.03em] text-navy lg:max-w-none lg:text-[clamp(2.5rem,min(4.2vw,8.5vh),4.5rem)] ${reveal}`}
             >
               Education without financial barriers.
             </h1>
@@ -245,17 +245,17 @@ const Hero = () => {
             >
               <Link
                 to="/apply"
-                className={`group inline-flex items-center gap-3 rounded-full bg-[#154E56] px-7 py-4 text-[15px] font-semibold text-white shadow-lg shadow-[#154E56]/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#173052] hover:shadow-xl hover:shadow-[#154E56]/30 active:translate-y-0 ${ring}`}
+                className={`group inline-flex items-center gap-3 rounded-full bg-teal px-7 py-4 text-[15px] font-semibold text-white shadow-lg shadow-teal/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-navy hover:shadow-xl hover:shadow-teal/30 active:translate-y-0 ${ring}`}
               >
                 Apply for free support
-                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/15 transition-all duration-300 group-hover:translate-x-1 group-hover:bg-[#E8B44F] group-hover:text-[#173052]">
+                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/15 transition-all duration-300 group-hover:translate-x-1 group-hover:bg-gold group-hover:text-navy">
                   <ArrowRight size={16} aria-hidden="true" />
                 </span>
               </Link>
 
               <Link
                 to="/programs"
-                className={`group inline-flex items-center gap-1.5 rounded-sm text-[15px] font-semibold text-[#173052] underline decoration-[#E8B44F] decoration-2 underline-offset-[6px] transition-all duration-300 hover:text-[#154E56] hover:decoration-[#154E56] hover:underline-offset-[9px] ${ring}`}
+                className={`group inline-flex items-center gap-1.5 rounded-sm text-[15px] font-semibold text-navy underline decoration-gold decoration-2 underline-offset-[6px] transition-all duration-300 hover:text-teal hover:decoration-teal hover:underline-offset-[9px] ${ring}`}
               >
                 Explore our programs
                 <ArrowUpRight
@@ -280,7 +280,7 @@ const Hero = () => {
                   size={18}
                   strokeWidth={1.75}
                   aria-hidden="true"
-                  className="shrink-0 text-[#154E56]"
+                  className="shrink-0 text-teal"
                 />
                 {text}
               </li>

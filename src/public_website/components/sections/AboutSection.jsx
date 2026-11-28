@@ -11,7 +11,7 @@ const offerings = [
 ];
 
 const ring =
-  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#154E56] focus-visible:ring-offset-2";
+  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal focus-visible:ring-offset-2";
 
 /* Reveals a block once, the first time it scrolls into view. */
 const useReveal = () => {
@@ -67,7 +67,7 @@ const AboutSection = () => {
         >
           {/* Image */}
           <figure
-            className={`relative overflow-hidden rounded-[28px] bg-[#E4F0EF] ${revealClass(mainShown)}`}
+            className={`relative overflow-hidden rounded-[28px] bg-light-teal ${revealClass(mainShown)}`}
           >
             <img
               src="https://images.unsplash.com/photo-1758270703813-2ecf235a6462?auto=format&fit=crop&w=1200&q=80"
@@ -81,13 +81,13 @@ const AboutSection = () => {
 
             <div
               aria-hidden="true"
-              className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-[#0E3B42]/90 via-[#0E3B42]/40 to-transparent"
+              className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-dark-teal/90 via-dark-teal/40 to-transparent"
             />
 
             <figcaption className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
               <span
                 aria-hidden="true"
-                className="mb-4 block h-1 w-10 rounded-full bg-[#E8B44F]"
+                className="mb-4 block h-1 w-10 rounded-full bg-gold"
               />
               <p className="max-w-[20ch] text-2xl font-bold leading-snug text-white sm:text-3xl">
                 Every learner deserves access to quality education.
@@ -102,7 +102,7 @@ const AboutSection = () => {
           >
             <h2
               id="about-heading"
-              className="text-3xl font-bold leading-[1.1] tracking-tight text-[#173052] sm:text-4xl lg:text-[44px]"
+              className="text-3xl font-bold leading-[1.1] tracking-tight text-navy sm:text-4xl lg:text-[44px]"
             >
               Education should be an opportunity, not a privilege.
             </h2>
@@ -113,7 +113,7 @@ const AboutSection = () => {
               across Maharashtra and India.
             </p>
 
-            <p className="mt-6 font-semibold text-[#173052]">
+            <p className="mt-6 font-semibold text-navy">
               We connect eligible students with
             </p>
 
@@ -127,7 +127,7 @@ const AboutSection = () => {
                     size={18}
                     strokeWidth={2}
                     aria-hidden="true"
-                    className="shrink-0 text-[#154E56]"
+                    className="shrink-0 text-teal"
                   />
                   {item}
                 </li>
@@ -141,12 +141,12 @@ const AboutSection = () => {
 
             {/* Vision and mission */}
             <div className="mt-10 grid gap-8 sm:grid-cols-2">
-              <div className="group border-t-2 border-slate-200 pt-5 transition-colors duration-300 hover:border-[#154E56]">
-                <h3 className="flex items-center gap-2.5 text-lg font-bold text-[#173052]">
+              <div className="group border-t-2 border-slate-200 pt-5 transition-colors duration-300 hover:border-teal">
+                <h3 className="flex items-center gap-2.5 text-lg font-bold text-navy">
                   <Eye
                     size={20}
                     aria-hidden="true"
-                    className="text-[#154E56]"
+                    className="text-teal"
                   />
                   Our vision
                 </h3>
@@ -157,12 +157,12 @@ const AboutSection = () => {
                 </p>
               </div>
 
-              <div className="group border-t-2 border-slate-200 pt-5 transition-colors duration-300 hover:border-[#E8B44F]">
-                <h3 className="flex items-center gap-2.5 text-lg font-bold text-[#173052]">
+              <div className="group border-t-2 border-slate-200 pt-5 transition-colors duration-300 hover:border-gold">
+                <h3 className="flex items-center gap-2.5 text-lg font-bold text-navy">
                   <Target
                     size={20}
                     aria-hidden="true"
-                    className="text-[#154E56]"
+                    className="text-teal"
                   />
                   Our mission
                 </h3>
@@ -176,10 +176,10 @@ const AboutSection = () => {
             <div className="mt-10">
               <Link
                 to="/about-us"
-                className={`group inline-flex items-center gap-3 rounded-full bg-[#154E56] py-3.5 pl-7 pr-3.5 text-[15px] font-semibold text-white shadow-lg shadow-[#154E56]/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#173052] hover:shadow-xl hover:shadow-[#154E56]/30 active:translate-y-0 ${ring}`}
+                className={`group inline-flex items-center gap-3 rounded-full bg-teal py-3.5 pl-7 pr-3.5 text-[15px] font-semibold text-white shadow-lg shadow-teal/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-navy hover:shadow-xl hover:shadow-teal/30 active:translate-y-0 ${ring}`}
               >
                 Discover our story
-                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/15 transition-all duration-300 group-hover:rotate-45 group-hover:bg-[#E8B44F] group-hover:text-[#173052]">
+                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/15 transition-all duration-300 group-hover:rotate-45 group-hover:bg-gold group-hover:text-navy">
                   <ArrowUpRight size={16} aria-hidden="true" />
                 </span>
               </Link>
@@ -190,7 +190,7 @@ const AboutSection = () => {
         {/* Commitment banner */}
         <div
           ref={bannerRef}
-          className={`mt-20 flex flex-col gap-8 rounded-[28px] bg-[#154E56] px-7 py-10 sm:px-12 md:flex-row md:items-center md:justify-between lg:mt-24 lg:px-16 lg:py-12 ${revealClass(bannerShown)}`}
+          className={`mt-20 flex flex-col gap-8 rounded-[28px] bg-navy px-7 py-10 sm:px-12 md:flex-row md:items-center md:justify-between lg:mt-24 lg:px-16 lg:py-12 ${revealClass(bannerShown)}`}
         >
           <div className="max-w-2xl">
             <h3 className="text-2xl font-bold leading-snug text-white sm:text-3xl">
@@ -205,10 +205,10 @@ const AboutSection = () => {
 
           <Link
             to="/programs"
-            className={`group inline-flex w-fit shrink-0 items-center gap-3 rounded-full bg-[#E8B44F] py-3.5 pl-7 pr-3.5 text-[15px] font-bold text-[#173052] transition-all duration-300 hover:-translate-y-0.5 hover:bg-white active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#154E56]`}
+            className={`group inline-flex w-fit shrink-0 items-center gap-3 rounded-full bg-gold py-3.5 pl-7 pr-3.5 text-[15px] font-bold text-navy transition-all duration-300 hover:-translate-y-0.5 hover:bg-white active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-navy`}
           >
             Explore programs
-            <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#173052]/10 transition-transform duration-300 group-hover:translate-x-0.5">
+            <span className="flex h-7 w-7 items-center justify-center rounded-full bg-navy/10 transition-transform duration-300 group-hover:translate-x-0.5">
               <ArrowRight size={16} aria-hidden="true" />
             </span>
           </Link>

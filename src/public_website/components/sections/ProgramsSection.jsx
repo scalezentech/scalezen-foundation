@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import {
@@ -111,7 +110,7 @@ const ProgramsSection = () => {
     <section
       id="programs"
       aria-labelledby="programs-heading"
-      className="bg-[#F7FAFA] py-16 sm:py-20 lg:py-24"
+      className="bg-off-white py-16 sm:py-20 lg:py-24"
     >
       <div className="mx-auto max-w-[1320px] px-6 sm:px-8">
 
@@ -122,17 +121,17 @@ const ProgramsSection = () => {
             headingShown
           )}`}
         >
-          <span className="mb-5 inline-flex items-center border border-teal/30 gap-2 rounded-full bg-[#154E56]/[0.07] px-4 py-2 text-sm font-semibold text-[#154E56]">
+          <span className="mb-5 inline-flex items-center border border-teal/30 gap-2 rounded-full bg-teal/[0.07] px-4 py-2 text-sm font-semibold text-teal">
             <Lightbulb size={16} aria-hidden="true" className="text-gold" />
             Learning Opportunities
           </span>
 
           <h2
             id="programs-heading"
-            className="text-3xl font-bold leading-[1.1] tracking-tight text-[#173052] sm:text-4xl lg:text-[44px]"
+            className="text-3xl font-bold leading-[1.1] tracking-tight text-navy sm:text-4xl lg:text-[44px]"
           >
             Creating Pathways to
-            <span className="block text-[#154E56]">
+            <span className="block text-teal">
               Better Opportunities
             </span>
           </h2>
@@ -158,14 +157,14 @@ const ProgramsSection = () => {
                 style={{
                   transitionDelay: gridShown ? `${i * 90}ms` : "0ms",
                 }}
-                className={`group relative flex h-full flex-col overflow-hidden rounded-[24px] border border-slate-200/80 bg-white transition-all duration-500 hover:-translate-y-1.5 hover:border-[#154E56]/25 hover:shadow-xl hover:shadow-[#154E56]/10 motion-reduce:transition-none ${
+                className={`group relative flex h-full flex-col overflow-hidden rounded-[24px] border border-slate-200/80 bg-white transition-all duration-500 hover:-translate-y-1.5 hover:border-teal/25 hover:shadow-xl hover:shadow-teal/10 motion-reduce:transition-none ${
                   gridShown
                     ? "translate-y-0 opacity-100"
                     : "translate-y-6 opacity-0"
                 }`}
               >
                 {/* Image */}
-                <div className="relative h-40 shrink-0 overflow-hidden bg-[#E4F0EF] sm:h-44">
+                <div className="relative h-40 shrink-0 overflow-hidden bg-light-teal sm:h-44">
                   <img
                     src={program.image}
                     alt=""
@@ -176,9 +175,9 @@ const ProgramsSection = () => {
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110 motion-reduce:transition-none"
                   />
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0E3B42]/85 via-[#0E3B42]/15 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-dark-teal/85 via-dark-teal/15 to-transparent" />
 
-                  <span className="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1.5 text-[11px] font-semibold text-[#173052]">
+                  <span className="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1.5 text-[11px] font-semibold text-navy">
                     {program.tag}
                   </span>
 
@@ -189,7 +188,7 @@ const ProgramsSection = () => {
                     {program.number}
                   </span>
 
-                  <div className="absolute bottom-3 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-[#E8B44F] text-[#173052] shadow-md">
+                  <div className="absolute bottom-3 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-gold text-navy shadow-md">
                     <Icon size={20} aria-hidden="true" />
                   </div>
                 </div>
@@ -198,7 +197,7 @@ const ProgramsSection = () => {
                 <div className="flex flex-1 flex-col p-5">
 
                   {/* Consistent title height */}
-                  <h3 className="min-h-[56px] text-lg font-bold leading-snug text-[#173052] transition-colors duration-300 group-hover:text-[#154E56]">
+                  <h3 className="min-h-[56px] text-lg font-bold leading-snug text-navy transition-colors duration-300 group-hover:text-teal">
                     {program.title}
                   </h3>
 
@@ -208,13 +207,13 @@ const ProgramsSection = () => {
                   </p>
 
                   {/* Aligned class information panel */}
-                  <div className="mt-4 flex min-h-[116px] flex-col rounded-xl border border-[#154E56]/10 bg-[#F3F8F7] px-3.5 py-3">
-                    <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-[#154E56]">
+                  <div className="mt-4 flex min-h-[116px] flex-col rounded-xl border border-teal/10 bg-mint px-3.5 py-3">
+                    <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-teal">
                       <School size={14} aria-hidden="true" />
                       Suitable For
                     </div>
 
-                    <p className="mt-1.5 text-sm font-bold text-[#173052]">
+                    <p className="mt-1.5 text-sm font-bold text-navy">
                       {program.classes}
                     </p>
 
@@ -227,7 +226,7 @@ const ProgramsSection = () => {
                   <Link
                     to="/programs"
                     aria-label={`Explore ${program.title}`}
-                    className="mt-auto inline-flex w-fit items-center gap-2 pt-5 text-sm font-bold text-[#154E56] transition-all duration-300 after:absolute after:inset-0 after:content-[''] group-hover:gap-3 hover:text-[#173052] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#154E56] focus-visible:ring-offset-2"
+                    className="mt-auto inline-flex w-fit items-center gap-2 pt-5 text-sm font-bold text-teal transition-all duration-300 after:absolute after:inset-0 after:content-[''] group-hover:gap-3 hover:text-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal focus-visible:ring-offset-2"
                   >
                     Explore Program
                     <ArrowRight size={16} aria-hidden="true" />
@@ -241,13 +240,13 @@ const ProgramsSection = () => {
         {/* Bottom CTA */}
         <div
           ref={ctaRef}
-          className={`mt-12 rounded-[28px] bg-[#173052] px-7 py-9 sm:px-12 lg:mt-14 lg:px-16 lg:py-10 ${revealClass(
+          className={`mt-12 rounded-[28px] bg-navy px-7 py-9 sm:px-12 lg:mt-14 lg:px-16 lg:py-10 ${revealClass(
             ctaShown
           )}`}
         >
           <div className="flex flex-col items-center justify-between gap-7 text-center md:flex-row md:text-left">
             <div className="max-w-2xl">
-              <div className="mb-3 flex items-center justify-center gap-2 text-sm font-semibold text-[#E8B44F] md:justify-start">
+              <div className="mb-3 flex items-center justify-center gap-2 text-sm font-semibold text-gold md:justify-start">
                 <GraduationCap size={19} aria-hidden="true" />
                 Your Learning Journey Starts Here
               </div>
@@ -264,11 +263,11 @@ const ProgramsSection = () => {
 
             <Link
               to="/programs"
-              className="group inline-flex shrink-0 items-center gap-3 rounded-full bg-[#E8B44F] py-3 pl-6 pr-3 text-sm font-bold text-[#173052] transition-all duration-300 hover:-translate-y-0.5 hover:bg-white active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#173052]"
+              className="group inline-flex shrink-0 items-center gap-3 rounded-full bg-gold py-3 pl-6 pr-3 text-sm font-bold text-navy transition-all duration-300 hover:-translate-y-0.5 hover:bg-white active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-navy"
             >
               View All Programs
 
-              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#173052]/10 transition-transform duration-300 group-hover:translate-x-0.5">
+              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-navy/10 transition-transform duration-300 group-hover:translate-x-0.5">
                 <ArrowRight size={16} aria-hidden="true" />
               </span>
             </Link>

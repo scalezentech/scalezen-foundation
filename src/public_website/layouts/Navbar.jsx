@@ -36,7 +36,7 @@ const languages = [
 ];
 
 const ring =
-  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#154E56] focus-visible:ring-offset-2";
+  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal focus-visible:ring-offset-2";
 
 /* Language dropdown. variant="dark" is for the dark top bar. */
 const LanguageMenu = ({ lang, setLang, variant = "light" }) => {
@@ -108,7 +108,7 @@ const LanguageMenu = ({ lang, setLang, variant = "light" }) => {
               }}
               className={`flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-sm font-medium transition-colors ${ring} ${
                 selected
-                  ? "bg-[#154E56]/[0.08] text-[#154E56]"
+                  ? "bg-teal/[0.08] text-teal"
                   : "text-slate-700 hover:bg-slate-50"
               }`}
             >
@@ -163,17 +163,17 @@ const Navbar = () => {
 
   const desktopLink = ({ isActive }) =>
     `relative whitespace-nowrap rounded-sm py-2 text-[15px] font-medium transition-colors duration-200 ${ring}
-     after:absolute after:inset-x-0 after:-bottom-1 after:h-0.5 after:origin-left after:rounded-full after:bg-[#154E56] after:transition-transform after:duration-200
+     after:absolute after:inset-x-0 after:-bottom-1 after:h-0.5 after:origin-left after:rounded-full after:bg-teal after:transition-transform after:duration-200
      ${
        isActive
-         ? "text-[#154E56] after:scale-x-100"
-         : "text-slate-700 after:scale-x-0 hover:text-[#154E56] hover:after:scale-x-100"
+         ? "text-teal after:scale-x-100"
+         : "text-slate-700 after:scale-x-0 hover:text-teal hover:after:scale-x-100"
      }`;
 
   return (
     <>
       {/* Announcement bar (desktop only) */}
-      <div className="relative z-[60] hidden h-10 bg-[#0E3B42] text-[13.5px] text-white/90 lg:block">
+      <div className="relative z-[60] hidden h-10 bg-dark-teal text-[13.5px] text-white/90 lg:block">
         <div className="mx-auto grid h-full max-w-[1320px] grid-cols-[1fr_auto_1fr] items-center px-8">
           <span aria-hidden="true" />
 
@@ -185,7 +185,7 @@ const Navbar = () => {
                   to={link.to}
                   className={`rounded-sm font-semibold underline underline-offset-4 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 ${
                     link.accent
-                      ? "text-[#E8B44F] hover:text-[#F2C86B]"
+                      ? "text-gold hover:text-[#F2C86B]"
                       : "text-white hover:text-white/80"
                   }`}
                 >
@@ -208,7 +208,7 @@ const Navbar = () => {
 
       {/* Main bar */}
       <header
-        className={`sticky top-0 z-50 border-b bg-[#F7FAFA]/95 backdrop-blur transition-shadow duration-200 ${
+        className={`sticky top-0 z-50 border-b bg-off-white/95 backdrop-blur transition-shadow duration-200 ${
           scrolled || open
             ? "border-slate-200 shadow-[0_10px_24px_-18px_rgba(14,59,66,0.45)]"
             : "border-slate-200/70"
@@ -216,7 +216,7 @@ const Navbar = () => {
       >
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-6 focus:top-3 focus:z-[60] focus:rounded-full focus:bg-[#154E56] focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-6 focus:top-3 focus:z-[60] focus:rounded-full focus:bg-teal focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
         >
           Skip to main content
         </a>
@@ -261,14 +261,14 @@ const Navbar = () => {
               to="/partner"
               aria-label="Partner with us"
               title="Partner with us"
-              className={`flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 bg-white text-[#173052] transition-colors hover:border-[#154E56] hover:text-[#154E56] ${ring}`}
+              className={`flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 bg-white text-navy transition-colors hover:border-teal hover:text-teal ${ring}`}
             >
               <HeartHandshake size={20} aria-hidden="true" />
             </Link>
 
             <Link
               to="/apply"
-              className={`group flex items-center gap-2 whitespace-nowrap rounded-full bg-[#154E56] px-7 py-3.5 text-[15px] font-semibold text-white shadow-md shadow-[#154E56]/20 transition-colors hover:bg-[#173052] ${ring}`}
+              className={`group flex items-center gap-2 whitespace-nowrap rounded-full bg-teal px-7 py-3.5 text-[15px] font-semibold text-white shadow-md shadow-teal/20 transition-colors hover:bg-navy ${ring}`}
             >
               Apply for free support
               <ArrowRight
@@ -283,7 +283,7 @@ const Navbar = () => {
           <div className="flex items-center gap-2 xl:hidden">
             <Link
               to="/apply"
-              className={`hidden whitespace-nowrap rounded-full bg-[#154E56] px-5 py-3 text-sm font-semibold text-white sm:inline-flex ${ring}`}
+              className={`hidden whitespace-nowrap rounded-full bg-teal px-5 py-3 text-sm font-semibold text-white sm:inline-flex ${ring}`}
             >
               Apply for free support
             </Link>
@@ -293,7 +293,7 @@ const Navbar = () => {
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
               aria-controls="mobile-menu"
-              className={`flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 bg-white text-[#173052] transition-colors hover:border-[#154E56] ${ring}`}
+              className={`flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 bg-white text-navy transition-colors hover:border-teal ${ring}`}
             >
               {open ? <X size={22} /> : <Menu size={22} />}
             </button>
@@ -305,7 +305,7 @@ const Navbar = () => {
       <div
         id="mobile-menu"
         inert={!open}
-        className={`fixed inset-0 z-40 overflow-y-auto bg-[#F7FAFA] px-6 pb-10 pt-[calc(5rem+1rem)] transition-opacity duration-300 motion-reduce:transition-none xl:hidden ${
+        className={`fixed inset-0 z-40 overflow-y-auto bg-off-white px-6 pb-10 pt-[calc(5rem+1rem)] transition-opacity duration-300 motion-reduce:transition-none xl:hidden ${
           open ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
       >
@@ -319,7 +319,7 @@ const Navbar = () => {
               className={({ isActive }) =>
                 `flex items-center justify-between border-b border-slate-200 py-4 text-2xl font-semibold tracking-tight transition-all duration-500 motion-reduce:transition-none ${ring} ${
                   open ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
-                } ${isActive ? "text-[#154E56]" : "text-[#173052] hover:text-[#154E56]"}`
+                } ${isActive ? "text-teal" : "text-navy hover:text-teal"}`
               }
             >
               {({ isActive }) => (
@@ -328,7 +328,7 @@ const Navbar = () => {
                   {isActive && (
                     <span
                       aria-hidden="true"
-                      className="h-2.5 w-2.5 rounded-full bg-[#154E56]"
+                      className="h-2.5 w-2.5 rounded-full bg-teal"
                     />
                   )}
                 </>
@@ -340,14 +340,14 @@ const Navbar = () => {
         <div className="mt-8 flex flex-col gap-3">
           <Link
             to="/apply"
-            className={`flex items-center justify-center gap-2 rounded-full bg-[#154E56] px-5 py-4 text-base font-semibold text-white ${ring}`}
+            className={`flex items-center justify-center gap-2 rounded-full bg-teal px-5 py-4 text-base font-semibold text-white ${ring}`}
           >
             Apply for free support
             <ArrowRight size={18} aria-hidden="true" />
           </Link>
           <Link
             to="/partner"
-            className={`flex items-center justify-center gap-2 rounded-full border border-[#154E56] px-5 py-4 text-base font-semibold text-[#154E56] ${ring}`}
+            className={`flex items-center justify-center gap-2 rounded-full border border-teal px-5 py-4 text-base font-semibold text-teal ${ring}`}
           >
             <HeartHandshake size={19} aria-hidden="true" />
             Partner with us
@@ -367,8 +367,8 @@ const Navbar = () => {
               aria-pressed={lang === l.value}
               className={`flex-1 rounded-full py-2.5 text-sm font-semibold transition-colors ${ring} ${
                 lang === l.value
-                  ? "bg-white text-[#173052] shadow-sm"
-                  : "text-slate-600 hover:text-[#173052]"
+                  ? "bg-white text-navy shadow-sm"
+                  : "text-slate-600 hover:text-navy"
               }`}
             >
               {l.label}

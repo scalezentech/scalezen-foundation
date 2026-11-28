@@ -111,7 +111,7 @@ const Panel = ({ panel, isActive, onActivate, priority }) => {
       {/* White gradient under the caption: rises from the bottom edge as the panel grows */}
       <div
         aria-hidden="true"
-        className={`absolute inset-x-0 bottom-0 h-[68%] origin-bottom bg-gradient-to-t from-white/80 from-10% via-white/30 to-transparent transition-[transform,opacity] duration-700 ease-out motion-reduce:transition-none ${
+        className={`absolute inset-x-0 bottom-0 h-[68%] origin-bottom bg-gradient-to-t from-white/80 from-10% via-white/30 to-transparent transition-[transform,scale,opacity] duration-700 ease-out motion-reduce:transition-none ${
           isActive
             ? "scale-y-100 opacity-100"
             : "scale-y-[0.85] opacity-90 lg:scale-y-[0.45] lg:opacity-0"

@@ -130,17 +130,54 @@ const LanguageMenu = ({ lang, setLang, variant = "light" }) => {
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const lastY = useRef(0);
   const [lang, setLang] = useState("EN");
   const location = useLocation();
 
   useEffect(() => setOpen(false), [location.pathname]);
 
+  /*
+    Scroll behaviour:
+    - While the hero (id="home") is on screen the bar is always visible.
+    - Once the visitor has scrolled past the hero, the bar hides when they scroll
+      down and comes back as soon as they scroll up.
+    - Pages without a hero keep the bar visible.
+    Movements under 6px are ignored so it does not flicker. 80px = main bar height.
+  */
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 4);
-    onScroll();
+    let frame = 0;
+    lastY.current = window.scrollY;
+
+    const update = () => {
+      frame = 0;
+      const y = window.scrollY;
+      const delta = y - lastY.current;
+      const hero = document.getElementById("home");
+      const pastHero = hero ? hero.getBoundingClientRect().bottom <= 80 : false;
+
+      setScrolled(y > 4);
+
+      if (!pastHero) {
+        setHidden(false);
+        lastY.current = y;
+      } else if (Math.abs(delta) > 6) {
+        setHidden(delta > 0);
+        lastY.current = y;
+      }
+    };
+
+    const onScroll = () => {
+      if (!frame) frame = requestAnimationFrame(update);
+    };
+
+    update();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (frame) cancelAnimationFrame(frame);
+    };
+  }, [location.pathname]);
 
   useEffect(() => {
     if (!open) return;
@@ -208,7 +245,9 @@ const Navbar = () => {
 
       {/* Main bar */}
       <header
-        className={`sticky top-0 z-50 border-b bg-off-white/95 backdrop-blur transition-shadow duration-200 ${
+        className={`sticky top-0 z-50 border-b bg-off-white will-change-transform transition-[translate,box-shadow] duration-300 ease-out has-[:focus-visible]:translate-y-0 motion-reduce:transition-none ${
+          hidden && !open ? "-translate-y-full" : "translate-y-0"
+        } ${
           scrolled || open
             ? "border-slate-200 shadow-[0_10px_24px_-18px_rgba(14,59,66,0.45)]"
             : "border-slate-200/70"

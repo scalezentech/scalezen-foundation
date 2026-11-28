@@ -116,7 +116,7 @@ const Footer = () => {
                 {/* Bottom footer */}
                 <div className="flex flex-col gap-5 py-7 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left">
                     <p className="text-xs leading-6 text-white/50 sm:text-sm">
-                        © {new Date().getFullYear()} ScaleZen Foundation. All rights reserved.
+                        &copy; {new Date().getFullYear()} ScaleZen Foundation. All rights reserved.
                     </p>
 
                     <div className="flex flex-wrap items-center justify-center gap-6 sm:justify-end">

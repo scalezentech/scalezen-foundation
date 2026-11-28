@@ -107,8 +107,8 @@ const ObjectivesSection = () => {
           className={`mb-14 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between ${revealClass(headingShown)}`}
         >
           <div className="max-w-2xl">
-            <span className="mb-5 inline-flex items-center gap-2 rounded-full bg-teal/[0.07] px-4 py-2 text-sm font-semibold text-teal">
-              <Target size={16} aria-hidden="true" />
+            <span className="mb-5 inline-flex items-center border border-teal/30 gap-2 rounded-full bg-teal/[0.07] px-4 py-2 text-sm font-semibold text-teal">
+              <Target size={16} aria-hidden="true" className="text-gold" />
               What We Aim to Achieve
             </span>
 

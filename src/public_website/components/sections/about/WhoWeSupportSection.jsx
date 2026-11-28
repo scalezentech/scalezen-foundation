@@ -108,8 +108,8 @@ const WhoWeSupportSection = () => {
           className={`mb-14 grid gap-6 lg:grid-cols-[1fr_0.75fr] lg:items-end lg:gap-12 ${revealClass(headingShown)}`}
         >
           <div>
-            <span className="mb-5 inline-flex items-center gap-2 rounded-full bg-teal/[0.07] px-4 py-2 text-sm font-semibold text-teal">
-              <BookOpen size={16} aria-hidden="true" />
+            <span className="mb-5 inline-flex items-center border border-teal/30 gap-2 rounded-full bg-teal/[0.07] px-4 py-2 text-sm font-semibold text-teal">
+              <BookOpen size={16} aria-hidden="true" className="text-gold" />
               Our Reach
             </span>
 

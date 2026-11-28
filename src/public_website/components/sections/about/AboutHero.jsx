@@ -52,9 +52,9 @@ const AboutHero = () => {
           <div className="my-auto">
             <span
               style={{ transitionDelay: "60ms" }}
-              className={`mb-6 inline-flex w-fit items-center gap-2 rounded-full bg-teal/[0.07] px-4 py-2 text-sm font-semibold text-teal ${reveal}`}
+              className={`mb-6 inline-flex w-fit items-center gap-2 border border-teal/30 rounded-full bg-teal/[0.07] px-4 py-2 text-sm font-semibold text-teal ${reveal}`}
             >
-              <HeartHandshake size={16} aria-hidden="true" />
+              <HeartHandshake size={16} aria-hidden="true" className="text-gold" />
               About ScaleZen Foundation
             </span>
 

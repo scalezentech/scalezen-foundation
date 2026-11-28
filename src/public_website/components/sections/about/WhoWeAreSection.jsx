@@ -92,8 +92,8 @@ const WhoWeAreSection = () => {
         >
           {/* Left: heading and belief */}
           <div className={revealClass(introShown)}>
-            <span className="mb-5 inline-flex items-center gap-2 rounded-full bg-teal/[0.07] px-4 py-2 text-sm font-semibold text-teal">
-              <HeartHandshake size={16} aria-hidden="true" />
+            <span className="mb-5 inline-flex items-center border border-teal/30 gap-2 rounded-full bg-teal/[0.07] px-4 py-2 text-sm font-semibold text-teal">
+              <HeartHandshake size={16} aria-hidden="true" className="text-gold" />
               Who We Are
             </span>
 

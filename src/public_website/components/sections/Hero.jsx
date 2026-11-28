@@ -123,7 +123,7 @@ const Panel = ({ panel, isActive, onActivate, priority }) => {
         className={`absolute left-5 top-5 hidden h-10 w-10 items-center justify-center rounded-full transition-colors duration-300 lg:flex ${
           isActive
             ? "bg-gold text-navy"
-            : "bg-white/20 text-white backdrop-blur-sm group-hover:bg-white/30"
+            : "bg-white/20 text-white  group-hover:bg-white/30"
         }`}
       >
         <Icon size={19} aria-hidden="true" />

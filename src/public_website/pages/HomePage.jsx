@@ -1,4 +1,5 @@
 import AboutSection from "../components/sections/AboutSection"
+import FAQSection from "../components/sections/FAQSection"
 import GetInvolvedSection from "../components/sections/GetInvolvedSection"
 import Hero from "../components/sections/Hero"
 import HowItWorksSection from "../components/sections/HowItWorksSection"
@@ -16,6 +17,7 @@ const HomePage = () => {
       <ImpactSection />
       <GetInvolvedSection />
       <ResourcesSection />
+      <FAQSection />
     </>
   )
 }
